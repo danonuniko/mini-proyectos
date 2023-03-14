@@ -1,0 +1,74 @@
+body{
+    display:inline-grid;                /*INLINE-GRID (I) Parece ser que crea una cuadríacula. No se exactamente porque es necesario*/
+    place-items: center;
+    width:100%;
+}
+
+.simon{                                 /* position relative necesario para que los elementos de su interior puedan ser absolute*/
+    position: relative;
+    margin-top: 50%;
+    padding: 10px;
+}
+
+.buttonContainer{
+    display:inline-grid;
+    grid-gap: 10px;                     /* Marca el espacio entre las filas/columnas de la cuadrícula*/
+    grid-template-columns: auto auto;   /*Establecemos el número de columnas (I)*/
+    transform: rotate(45deg);
+}
+
+.square {
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    cursor:pointer;
+}
+
+.square:active,.active{                 /*Representa cuando hacemos click y en los ejemplos */
+    filter: brightness(155%);
+}
+
+.red{
+    background-color: rgb(212, 12, 12);
+}
+
+.green{
+    background-color: rgb(22, 199, 6);
+}
+
+.blue{
+    background-color: rgb(27, 12, 146);
+}
+
+.yellow{
+    background-color: rgb(250,200,0);
+}
+
+#startButton{
+    width: 75px;
+    position: absolute;             /*(I)*/
+    top: 10px;
+    right: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgba(85, 85, 85, 0.597);
+    padding: 5px;
+}
+
+#startButton:disabled{
+    background-color: #eee;
+}
+
+.title{
+    width: min-content;              /* Conseguimos que quede una linea por encima de la otra*/
+}
+
+.winner{
+    animation: spin 1s ease-in-out;  /*ease-in-out comienza lento, acelera y termina lento*/
+}
+
+@keyframes spin {
+    100% {transform: rotate(180deg)}    
+}
